@@ -29,6 +29,9 @@ class members extends parts
         $members->{"Jesper Holm"} = $this->addNew('Jesper Holm', 0, 'Fyn');
 
         $this->members = $members;
+        echo '<pre>';
+            print_r($this->getParts());
+        echo '</pre>';
         return $members;
     }
 
