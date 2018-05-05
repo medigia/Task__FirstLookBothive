@@ -44,7 +44,3 @@ jQuery('body').APICall('http://local.bothive.com/Task__FirstLookBotHive/', {
     console.log('done');
 });
 
-function runChart(data) {
-
-
-}
