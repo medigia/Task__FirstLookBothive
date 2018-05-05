@@ -1,4 +1,19 @@
 <!DOCTYPE html>
+<?php
+$curlSession = curl_init();
+curl_setopt($curlSession, CURLOPT_URL, 'http://local.bothive.com/Task__FirstLookBotHive/?url=members&fetch_all=true&apikey=2222');
+curl_setopt($curlSession, CURLOPT_BINARYTRANSFER, true);
+curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, true);
+
+$jsonData = json_decode(curl_exec($curlSession));
+$parts = $jsonData->parts;
+$members = $jsonData->members;
+echo implode($parts, ',') ;
+echo '<pre>';
+    print_r($parts);
+echo '</pre>';
+curl_close($curlSession);
+?>
 <html style="height: 100%">
 <head>
     <meta charset="utf-8">
@@ -37,7 +52,7 @@
             },
             selectedMode: 'false',
             bottom: 20,
-            data: ['Midtjylland', 'Syddanmark', 'Sjælland', 'Nordjylland', 'Hovedstaden'],
+            data: [<?php echo implode($parts, ',') ?>],
             padding: [10, 10, 10, 10],
         }],
         toolbox: {

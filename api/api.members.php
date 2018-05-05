@@ -14,8 +14,15 @@ class members extends parts
     function __construct()
     {
         parent::__construct();
+        $data = '';
+
 
         $this->populate_members();
+        if($this->CHECK_VAR('fetch_all')) {
+            $data = $this->fetch_all();
+        }
+
+        echo json_encode($data);
     }
 
     public function populate_members()
@@ -24,14 +31,11 @@ class members extends parts
         $members = new stdClass();
 
 
-        $members->{"Mike Sørensen"} = $this->addNew('Mike Sørensen', 0, 'Midtjylland');
-        $members->{"Dennis Holmgreen"} = $this->addNew('Dennis Holmgreen', 0, 'Syddanmark');
+        $members->{"Mike Sørensen"} = $this->addNew('Mike Sørensen', 0, $this->getPart(0));
+        $members->{"Dennis Holmgreen"} = $this->addNew('Dennis Holmgreen', 0, $this->getPart(1));
         $members->{"Jesper Holm"} = $this->addNew('Jesper Holm', 0, 'Fyn');
 
         $this->members = $members;
-        echo '<pre>';
-            print_r($this->getParts());
-        echo '</pre>';
         return $members;
     }
 
@@ -46,6 +50,12 @@ class members extends parts
     public function activate_member()
     {
 
+    }
+    
+    public function fetch_all() {
+        $parts = $this->getParts();
+        $members = $this->members;
+        return array('parts' => $parts, 'members' => $members);
     }
 
     function __destruct()

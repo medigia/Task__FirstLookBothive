@@ -16,11 +16,10 @@ class parts extends API {
 
     public function populate_parts() {
         $this->parts = new stdClass();
-        $this->parts->Midtjylland = $this->addPart('Midtjylland', 0);
-        $this->parts->Fyn = $this->addPart('Fyn', 0);
-        $this->parts->Syddanmark = $this->addPart('Syddanmark', 0);
-        $this->parts->Sjælland = $this->addPart('Sjælland', 0);
-        $this->parts->Nordjylland = $this->addPart('Nordjylland', 0);
+        $parts = array('Midtjylland', 'Fyn', 'Syddanmark', 'Sjælland', 'Nordjylland');
+        foreach($parts as $i => $part) {
+            $this->parts->{$i} = $this->addPart($part, 0);
+        }
     }
 
     protected function addPart($name, $state) {
@@ -32,6 +31,10 @@ class parts extends API {
 
     public function getParts() {
         return $this->parts;
+    }
+
+    public function getPart($part_id) {
+        return $this->parts->{$part_id}->name;
     }
 
     function __destruct() {

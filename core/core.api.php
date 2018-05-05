@@ -27,6 +27,22 @@ class API extends system {
         endif;
     }
 
+    public function GET_VAR($get) {
+        if(isset($_GET[$get])) {
+            return $_GET[$get];
+        } else {
+            throw new Exception('Get variable not found. API Will not run with GET data.');
+        }
+    }
+
+    public function CHECK_VAR($get) {
+        if(isset($_GET[$get])) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     function __destruct() {
 
     }
