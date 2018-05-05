@@ -1,6 +1,6 @@
 <?php
 require_once("core/core.system.php");
-if($_GET['url'] != '') {
+if(isset($_GET['url'])) {
     $route = new stdClass();
     $route->url = $_GET['url'];
     if($_GET['apikey'] != '') {
