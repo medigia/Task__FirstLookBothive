@@ -1,9 +1,24 @@
+* {
+    font-family: 'Lato', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Titillium Web', sans-serif;
+    margin-bottom:0px;
+}
+h1 {
+    font-size:32px;
+    line-height:38px;
+}
+p:last-child {
+    margin-bottom:0px;
+}
 #login {
     background:#e3e5e8;
 }
 #login_area {
     width:40%;
     margin-left:30%;
+    border:1px solid #b5b5b5;
 }
 #login-logo {
     padding-left:30%;
@@ -12,7 +27,7 @@
 #login-logo img {
     max-width:100%;
 }
-#login_area h2, #login_area > .row > p {
+#login_area h2, #login_area  p {
     text-align: center;
     width: 100%;
     float: left;
@@ -21,5 +36,33 @@
     margin:0 auto;
     padding: 0% 25%;
     display: block;
+    width:100%;
     float: left;
+}
+hr {
+    height: 1px;
+    background: rgba(245,245,245,0.5);
+    width: 30%;
+    margin-top:30px;
+    margin-bottom:30px;
+    margin-left: 35%;
+
+}
+#login_area {
+    background: #fff;
+    margin-top: 45px;
+}
+.form-group {
+    text-align: center;
+}
+#submit-login {
+    background:#003f71;
+    color:#fff;
+    margin-top:25px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    width:100%;
+    float:left;
+
 }
