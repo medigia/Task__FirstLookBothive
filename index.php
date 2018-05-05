@@ -9,7 +9,8 @@ if($_GET['url']) {
         $route->apikey = $_GET['apikey'];
 
         require_once("core/core.api.php");
-        require_once("api/api." . $route->url . ".php");
+        require_once("api/api.parts.php");
+        require_once("api/api.members.php");
         $api = new $route->url($route);
     } else {
         //Boot normal sequence
