@@ -1,0 +1,25 @@
+#login {
+    background:#e3e5e8;
+}
+#login_area {
+    width:40%;
+    margin-left:30%;
+}
+#login-logo {
+    padding-left:30%;
+    padding-right:30%;
+}
+#login-logo img {
+    max-width:100%;
+}
+#login_area h2, #login_area > .row > p {
+    text-align: center;
+    width: 100%;
+    float: left;
+}
+#login_area .form-container {
+    margin:0 auto;
+    padding: 0% 25%;
+    display: block;
+    float: left;
+}
