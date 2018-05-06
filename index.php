@@ -1,3 +1,4 @@
+
 <?php
 require_once("core/core.system.php");
 if(isset($_GET['url'])) {

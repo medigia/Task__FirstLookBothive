@@ -18,12 +18,13 @@ class parts extends API {
         $this->parts = new stdClass();
         $parts = array('Midtjylland', 'Fyn', 'Syddanmark', 'Sjælland', 'Nordjylland');
         foreach($parts as $i => $part) {
-            $this->parts->{$i} = $this->addPart($part, 0);
+            $this->parts->{$i} = $this->addPart($i, $part, 0);
         }
     }
 
-    protected function addPart($name, $state) {
+    protected function addPart($id, $name, $state) {
         $parts           = new stdClass();
+        $parts->id       = $id;
         $parts->name     = $name;
         $parts->state    = $state;
         return $parts;
