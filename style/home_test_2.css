@@ -1,0 +1,185 @@
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+.startBig {
+
+    position: fixed;
+    left:50%;
+    top:50%;
+    opacity: 0;
+    bottom:50%;
+    right:50%;
+    transform: scale(5);
+    max-width: 100px;
+}
+.middle-canvas {
+    position: fixed;
+    top: 13%;
+    width:100%;
+    background: #0a3f71;
+    height:0px;
+}
+.middle-canvas.animated {
+    animation-name:height;
+    animation-duration: 3s;
+
+    animation-iteration-count: 1;
+}
+.line-to-denmark {
+    width:5px;
+    left:calc(50% - 2.5px);
+    right:calc(50% - 2.5px);
+    height:0px;
+    top:13%;
+    background:#fff;
+    position: fixed;
+}
+.line-to-denmark.animated {
+    animation-name:line-to-denmark;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+.line-to-denmark.animated.done {
+    height:35%;
+}
+.middle-canvas.animated.done {
+    height: calc(100% - 13%);
+}
+#nav {
+    background: #0a3f71;
+    color: #fff;
+    position:relative;
+
+    left:-50%;
+
+}
+.denmark {
+    position: fixed;
+    top: 27%;
+    left:50%;
+    width: 0%;
+    height: 0%;
+    border-radius: 100%;
+    transition:0.3s all ease;
+    opacity:0;
+    background:#fff;
+}
+.denmark h3 {
+    transition:0.3s all ease;
+    opacity: 0;
+    padding-top:38%;
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+}
+.denmark.done h3 {
+    transition:0.3s all ease;
+    opacity: 1;
+
+}
+.denmark.animated {
+    animation-name:denmark;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+.denmark.animated.done {
+    opacity:1;
+    width: 175px;
+    height: 175px;
+    left: calc(50% - 87.5px);
+    background: #fff;
+    transition:0.3s all ease;
+    top:37%;
+
+}
+.slideOutWFade {
+    animation: slideOutWFade;
+    animation-duration: 2.1s;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+}
+/*.slideOutWFade.done {*/
+    /*left:0% !important;opacity:1;*/
+/*}*/
+#nav ul {
+    list-style: none;
+    margin-top: 1rem;
+
+}
+#nav ul li {
+    padding: 60px 20px;
+    font-weight: 600;
+    font-size: 28px;
+    line-height:40px;
+    font-family: 'Titillium Web', sans-serif;
+}
+.topSpace {
+    padding-top:6.25%;
+}
+.startSmall {
+    left:0%;
+    position:fixed;
+    top:13%;
+    width:0%;
+    opacity:0;
+    height: 2px;
+    background:#0a3f71;
+}
+
+.animateDown {
+    animation: animateDown;
+    animation-duration: 4.1s;
+    animation-iteration-count: 1;
+}
+.animateDown.done {
+    transform: scale(1);opacity: 1;top:8px;left:5%;
+}
+.goFull {
+    animation-name:goFull;
+    animation-duration: 1s;
+    animation-delay: 3.1s;
+    animation-iteration-count: 1;
+}
+.groowy.active{
+    animation-name:groowy;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+.goFull.done {
+    width:100%;
+    opacity:1;
+}
+@keyframes animateDown {
+    0% {transform: scale(5);left:50%;}
+    75% {transform: scale(1.5);opacity: 1;top:10px;left:50%;}
+    to {transform: scale(1);opacity: 1;top:8px;left:5%;}
+}
+
+@keyframes goFull {
+    0% {width:0%;opacity:0;}
+    to {width:100%;opacity:1;}
+}
+/*@keyframes slideOutWFade {*/
+    /*0% {left:-50%;opacity:0;}*/
+    /*to {left:0%;opacity:1;}*/
+/*}*/
+@keyframes groowy {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.2);}
+    100% {transform: scale(1);}
+}
+
+@keyframes height {
+    0% {height:0%;}
+    100% {height:100%;}
+}
+@keyframes line-to-denmark {
+    0% {height:0%;}
+    100% {height:35%;}
+}
+
+@keyframes denmark {
+    0% {width: 0px;height: 0px;top: 50%;background:#fff;opacity: 0;left: 50%;}
+    100% {width: 175px;height: 175px;background: #fff;top:37%;opacity: 1;left: calc(50% - 87.5px);}
+}
