@@ -14,8 +14,10 @@ jQuery(document).ready(function() {
         jQuery('.animated').addClass('done');
         jQuery('.line-to-denmark').addClass('done');
         jQuery('.denmark').addClass('animated');
+        jQuery('.title, .subtitle').addClass('animated');
     }, 7000);
     setTimeout(function() {
         jQuery('.denmark').addClass('done');
+        jQuery('.title, .subtitle').addClass('done');
     }, 8000);
 });

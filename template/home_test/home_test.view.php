@@ -28,6 +28,8 @@
         </div>
 
         <div class="middle-canvas">
+            <div class="title"><h3>Hvor kommer <span class="break"></span> vi fra?</h3></div>
+            <div class="subtitle"><h4>En geografisk inddeling som <span class="break"></span> BotHive ser det</h4></div>
             <div class="line-to-denmark"></div>
             <div class="denmark">
                 <h3>Danmark</h3>
