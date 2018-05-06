@@ -17,7 +17,13 @@ jQuery(document).ready(function() {
         jQuery('.title, .subtitle').addClass('animated');
     }, 7000);
     setTimeout(function() {
+        jQuery('.left-line, .right-line, .skewy-left-line, .skewy-right-line').addClass('animated');
+    }, 7500);
+    setTimeout(function() {
         jQuery('.denmark').addClass('done');
         jQuery('.title, .subtitle').addClass('done');
     }, 8000);
+    setTimeout(function() {
+        jQuery('.left-line, .right-line, .skewy-left-line, .skewy-right-line').addClass('done');
+    }, 10500);
 });

@@ -33,8 +33,16 @@
             <div class="line-to-denmark"></div>
             <div class="denmark">
                 <h3>Danmark</h3>
-
             </div>
+
+            <div class="left-line"></div>
+
+            <div class="right-line"></div>
+
+            <div class="skewy-left-line"></div>
+
+            <div class="skewy-right-line"></div>
+
         </div>
 
         <div id="footer-outer">

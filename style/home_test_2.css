@@ -90,8 +90,44 @@ body {
     left: calc(50% - 87.5px);
     background: #fff;
     transition:0.3s all ease;
-    top:37%;
+    top:39.5%;
 
+}
+.skewy-left-line, .skewy-right-line {
+    position: fixed;
+    top: 45%;
+    height: 5px;
+    background: #fff;
+    z-index: -1;
+    width: 0%;
+}
+.skewy-left-line {
+    right: 50%;
+    transform: rotate(305deg);
+}
+.skewy-right-line {
+    left: 50%;
+    transform: rotate(235deg);
+}
+.skewy-left-line.animated {
+    animation-name:skewy-left-line-width;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+}
+.skewy-right-line.animated{
+    animation-name:skewy-right-line-width;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+}
+.skewy-right-line.animated.done, .skewy-left-line.animated.done {
+    width: 30%;
+    top: 70%;
+}
+body .skewy-right-line.animated.done {
+    left:43%;
+}
+body .skewy-left-line.animated.done {
+    right:43%;
 }
 .slideOutWFade {
     animation: slideOutWFade;
@@ -189,6 +225,28 @@ body {
     display: inline-block;
     padding-left: 35px;
 }
+.left-line, .right-line {
+    position: fixed;
+    top: 48%;
+    height: 5px;
+    background: #fff;
+    z-index: -1;
+    width:0%;
+}
+.left-line {
+    right:50%;
+}
+.right-line {
+    left:50%;
+}
+.left-line.animated, .right-line.animated {
+    animation-name:line-width;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+}
+.left-line.animated.done, .right-line.done {
+    width: 40%;
+}
 @keyframes goFull {
     0% {width:0%;opacity:0;}
     to {width:100%;opacity:1;}
@@ -217,5 +275,17 @@ body {
 }
 @keyframes denmark {
     0% {width: 0px;height: 0px;top: 50%;background:#fff;opacity: 0;left: 50%;}
-    100% {width: 175px;height: 175px;background: #fff;top:37%;opacity: 1;left: calc(50% - 87.5px);}
+    100% {width: 175px;height: 175px;background: #fff;top:39.5%;opacity: 1;left: calc(50% - 87.5px);}
+}
+@keyframes line-width {
+    0% {width:0%;}
+    100% {width:40%;}
+}
+@keyframes skewy-left-line-width {
+    0% {width:0%;    top: 48%; right:50%;}
+    100% {width:30%;    top: 70%; right:43%;}
+}
+@keyframes skewy-right-line-width {
+    0% {width:0%;    top: 48%; left:50%;}
+    100% {width:30%;    top: 70%; left:43%;}
 }
